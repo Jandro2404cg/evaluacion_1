@@ -1,0 +1,74 @@
+import os
+
+def printMenu():
+    ''' printMenu
+    Author: <Alejandro Asael Cabrera Garcia >
+    Date: <10/03/2023>
+   
+    os.system('cls')
+    print("Bienvenido al menú seleccione una opción\n\n")
+    print("\t1) Suma\n")
+    print("\t2) Resta\n")
+    print("\t3) División\n")
+    print("\t4) Multiplicación\n")
+    print("\t5) Salir\n")
+    option = input()
+    if option:
+        return int(option)
+    else:
+        return 0
+
+def suma(a, b):
+    if a % 2 == 0 and b % 2 == 0:
+        print("La suma es:", a + b)
+    else:
+        print("Los valores no son pares")
+
+def resta(a, b):
+    if a % 5 == 0 and b % 5 == 0:
+        print("La resta es:", a - b)
+    else:
+        print("Los valores no son múltiplos de 5")
+
+def division(a, b):
+    if a % b == 0:
+        print("La división es:", a / b)
+    else:
+        print("El resultado no es una división exacta")
+
+def multiplicacion(a, b):
+    if a > 10 and b > 10:
+        print("La multiplicación es:", a * b)
+    else:
+        print("Los valores no son mayores a 10")
+
+def main():
+    flag = 0
+    while flag != 5:
+        flag = printMenu()
+        
+        if flag == 1:
+            a = int(input("Ingrese el primer valor: "))
+            b = int(input("Ingrese el segundo valor: "))
+            suma(a, b)
+        elif flag == 2:
+            a = int(input("Ingrese el primer valor: "))
+            b = int(input("Ingrese el segundo valor: "))
+            resta(a, b)
+        elif flag == 3:
+            a = int(input("Ingrese el primer valor: "))
+            b = int(input("Ingrese el segundo valor: "))
+            division(a, b)
+        elif flag == 4:
+            a = int(input("Ingrese el primer valor: "))
+            b = int(input("Ingrese el segundo valor: "))
+            multiplicacion(a, b)
+        elif flag == 5:
+            print("Hasta luego")
+        else:
+            print("\nOpción no válida")
+        
+        input("\nPresione Enter para continuar...")
+
+if __name__ == "__main__":
+    main()
